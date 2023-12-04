@@ -36,7 +36,8 @@ function bubbleSort(array) {
   functionTime = doneTime - startTime;
   console.log(`Array with ${array.length} elements sorted in ${runCount} iterations with ${swapCount} swaps in ${functionTime / 1000} seconds.`);
   console.log(`${Math.floor(swapCount/functionTime)} swaps/ms`);
-  console.log(`${Math.floor(runCount/functionTime)} runs/ms`);
+  console.log(`${Math.floor(runCount/(functionTime/1000))} runs/s`);
+  console.log(`${Math.floor(swapCount/runCount)} swaps/run`)
   return functionTime;
 }
 let array = createRandomizedArray(100000)
